@@ -1,9 +1,9 @@
+import { MinusOutlined, PlusOutlined, UndoOutlined } from '@ant-design/icons';
+import { Button, Input } from 'antd';
+import clsx from 'clsx';
+import { range } from 'ts-functional';
 import { useLocalStorage } from 'unstateless';
 import styles from "./App.module.scss";
-import { range } from 'ts-functional';
-import clsx from 'clsx';
-import { Button, Input } from 'antd';
-import { MinusOutlined, PlusOutlined, RotateLeftOutlined, UndoOutlined } from '@ant-design/icons';
 
 function App() {
   const [count, setCount] = useLocalStorage.number("count", 0)();
