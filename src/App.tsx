@@ -16,8 +16,8 @@ function App() {
     <h1>Water Tracker</h1>
 
   <div className={styles.cupList}>
-    {range(0, cupsNeeded).map((i) => (
-      <div key={i} className={clsx([styles.cup, i >= count && styles.empty])}>
+    {range(1, cupsNeeded).map((i) => (
+      <div key={i} className={clsx([styles.cup, i > count && styles.empty])}>
         <img src="/plastic-cup.png" alt="water" />
       </div>
     ))}
