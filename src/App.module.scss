@@ -43,8 +43,8 @@
 
     .setting {
         display: inline-block;
-        width: 50%;
-        padding-top: 32px;
+        width: calc(50% - 32px);
+        padding: 16px;
         justify-content: center;
         gap: 16px;
         margin-top: 16px;

@@ -2,6 +2,8 @@ import { useLocalStorage } from 'unstateless';
 import styles from "./App.module.scss";
 import { range } from 'ts-functional';
 import clsx from 'clsx';
+import { Button, Input } from 'antd';
+import { MinusOutlined, PlusOutlined, RotateLeftOutlined, UndoOutlined } from '@ant-design/icons';
 
 function App() {
   const [count, setCount] = useLocalStorage.number("count", 0)();
@@ -22,32 +24,21 @@ function App() {
   </div>
 
     <div className={styles.count}>
-      <h2>{count * cup} oz</h2>
-      <p>of {goal} oz</p>
+      <p><b>{count * cup} oz</b> of {goal} oz</p>
       <p>{count} cups</p>
     </div>
 
     <div className={styles.buttons}>
-      <button onClick={() => setCount(count + 1)}>Add cup</button>
-      <button onClick={() => setCount(count - 1)}>Remove cup</button>
-      <button onClick={() => setCount(0)}>Reset</button>
+      <Button type="primary" onClick={() => setCount(count + 1)}><PlusOutlined /> Add cup</Button>
+      <Button onClick={() => setCount(count - 1)}><MinusOutlined /> Remove cup</Button>
+      <Button danger onClick={() => setCount(0)}><UndoOutlined /> Reset</Button>
     </div>
 
     <div className={styles.setting}>
-      <input
-        type="number"
-        value={goal}
-        onChange={(e) => setGoal(Number(e.target.value))}
-      />
-      <label>Goal (oz)</label>
+      <Input addonBefore="Goal (oz)" value={goal} onChange={(e) => setGoal(Number(e.target.value))} />
     </div>
     <div className={styles.setting}>
-      <input
-        type="number"
-        value={cup}
-        onChange={(e) => setCup(Number(e.target.value))}
-      />
-      <label>Cup Size (oz)</label>
+      <Input addonBefore="Cup (oz)" value={cup} onChange={(e) => setCup(Number(e.target.value))} />
     </div>
   </div>;
   
