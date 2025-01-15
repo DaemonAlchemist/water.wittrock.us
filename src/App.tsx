@@ -10,7 +10,7 @@ function App() {
   const [goal, setGoal] = useLocalStorage.number("goal", 100)();
   const [cup, setCup] = useLocalStorage.number("cup", 8)();
 
-  const cupsNeeded = Math.ceil(goal / cup);
+  const cupsNeeded = Math.ceil(goal / (cup || 8));
 
   return <div className={styles.waterTracker}>
     <h1>Water Tracker</h1>
