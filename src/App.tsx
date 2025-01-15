@@ -29,16 +29,16 @@ function App() {
     </div>
 
     <div className={styles.buttons}>
-      <Button type="primary" onClick={() => setCount(count + 1)}><PlusOutlined /> Add cup</Button>
-      <Button onClick={() => setCount(count - 1)}><MinusOutlined /> Remove cup</Button>
-      <Button danger onClick={() => setCount(0)}><UndoOutlined /> Reset</Button>
+      <Button type="primary" size='large' onClick={() => setCount(count + 1)}><PlusOutlined /> Add cup</Button>
+      <Button size='large' onClick={() => setCount(count - 1)}><MinusOutlined /> Remove cup</Button>
+      <Button danger size='large' onClick={() => setCount(0)}><UndoOutlined /> Reset</Button>
     </div>
 
     <div className={styles.setting}>
-      <Input addonBefore="Goal (oz)" value={goal} onChange={(e) => setGoal(Number(e.target.value))} />
+      <Input size='large' addonBefore="Goal (oz)" value={goal} onChange={(e) => setGoal(Number(e.target.value))} />
     </div>
     <div className={styles.setting}>
-      <Input addonBefore="Cup (oz)" value={cup} onChange={(e) => setCup(Number(e.target.value))} />
+      <Input size='large' addonBefore="Cup (oz)" value={cup} onChange={(e) => setCup(Number(e.target.value))} />
     </div>
   </div>;
   
